@@ -19,7 +19,6 @@ class HomeFragment : Fragment() , HomeContract.View{
     private val homePresenter : HomePresenter by lazy {
         //여기서 해당 view를 넘김
         HomePresenter(this)
-        //HomePresenter(this@HomeFragment)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
