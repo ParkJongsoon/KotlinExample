@@ -2,6 +2,7 @@ package com.example.a1a1a1214.kotlinexample.util
 
 import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
+import java.util.*
 
 /**
  * Created by a1a1a1214 on 2018-04-24.
@@ -13,3 +14,5 @@ fun AppCompatActivity.replace(@IdRes frameId: Int, fragment : android.support.v4
 {
     supportFragmentManager.beginTransaction().replace(frameId, fragment, tag).commit()
 }
+
+fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start)

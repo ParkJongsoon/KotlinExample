@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import com.example.a1a1a1214.kotlinexample.R
 import com.example.a1a1a1214.kotlinexample.util.replace
+import com.example.a1a1a1214.kotlinexample.view.main.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +13,7 @@ class MainActivity : AppCompatActivity() {
     //Fragment는 한번만 생성
     private val homeFragment : HomeFragment by lazy {
         //생성과 동시에 arguments를 생성
-        HomeFragment().apply {
-            arguments = Bundle().apply {
-                putInt(HomeFragment.KEY_TITLE, R.string.title_home)
-            }
-        }
+        HomeFragment()
     }
     private val cameraFragment : CameraFragment by lazy {
         CameraFragment().apply {
