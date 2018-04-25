@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.a1a1a1214.kotlinexample.R
+import com.example.a1a1a1214.kotlinexample.data.source.image.ImageRepository
 import com.example.a1a1a1214.kotlinexample.view.main.home.presenter.HomeContract
 import com.example.a1a1a1214.kotlinexample.view.main.home.presenter.HomePresenter
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -18,7 +19,8 @@ class HomeFragment : Fragment() , HomeContract.View{
 
     private val homePresenter : HomePresenter by lazy {
         //여기서 해당 view를 넘김
-        HomePresenter(this)
+        //ImageRepository는 object로서 object는 별도의 ()없이 사용
+        HomePresenter(this, ImageRepository)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
