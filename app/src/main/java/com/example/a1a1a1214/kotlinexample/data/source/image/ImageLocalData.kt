@@ -1,5 +1,6 @@
 package com.example.a1a1a1214.kotlinexample.data.source.image
 
+import com.example.a1a1a1214.kotlinexample.ImageData
 import com.example.a1a1a1214.kotlinexample.util.random
 
 /**
@@ -7,9 +8,16 @@ import com.example.a1a1a1214.kotlinexample.util.random
  */
 
 class ImageLocalData : ImageDataSourece{
-    override fun loadImageFileName(fileName : (String) -> Unit)
-    {
-        //호출이 일어나면 여기서 fileName을 넘겨준다
-        fileName(String.format("sample_%02d", (1..10).random()))
+
+    override fun loadImageList(imageDataList: (List<ImageData>) -> Unit, size: Int) {
+        val list = mutableListOf<ImageData>()
+
+        for (index in 1..size) {
+            val name = String.format("sample_%02d",(1..10).random())
+            list.add(ImageData(name, name))
+        }
+        //imageDataList를 콜백으로 전달
+        imageDataList(list)
     }
+
 }
